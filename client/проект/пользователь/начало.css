@@ -1,0 +1,233 @@
+body {
+    font-family: 'Mulish', sans-serif; /* Устанавливаем Mulish как основной шрифт */
+}
+
+@media all and (min-width: 375px) {
+    .main {
+        width: 375px;
+        height: 812px; 
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid #109a20; 
+        border-radius: 8px; 
+        position: relative; /* Добавление этого свойства */
+        
+    }
+
+    .header-image {
+        width: 100%; /* Занимает всю ширину верхней границы */
+        margin-top: 0px;
+        height: auto; /* Автоматическая высота для сохранения пропорций */
+    }
+    
+    .header-container {
+        display: flex; /* Используем flex для выравнивания */
+        align-items: center; /* Выравнивание по вертикали */
+        margin: 10px; /* Отступы сверху и снизу */
+    }
+
+    .stimul_zag {
+        font-size: 20px; /* Размер шрифта для заголовка */
+    }
+
+    .arrow-image {
+        width: 30px; /* Укажите размер стрелочки по вашему усмотрению */
+        height: auto; /* Сохраняем пропорции */
+        position: absolute; /* Абсолютное позиционирование */
+        display: flex;
+        margin-top: -14px;
+        margin-left: -60px;
+    }
+    .divider {
+        display: flex;
+        border: none; /* Убираем стандартные границы */
+        border-top: 2px solid #e9e9e9; /* Устанавливаем верхнюю границу */
+        margin: 0px; /* Отступы сверху и снизу */
+        width: 100%; /* Ширина линии */
+        margin-bottom: 35px;
+    }
+
+    .redact_gr {
+        background-color: white; /* Белый фон внутри рамки */
+        color: rgb(0, 0, 0); /* Цвет текста */
+        border: 2px solid grey; /* Сервая обводка */
+        padding: 10px; /* Поля внутри рамки */
+        text-align: left; /* Выравнивание текста по левому краю */
+        text-decoration: none; /* Убираем подчеркивание */
+        display: inline-flex; /* Используем flex для выравнивания */
+        justify-content: flex-start; /* Выравнивание содержимого по левому краю */
+        align-items: center; /* Центрируем содержимое по вертикали */
+        width: 230px; /* Фиксированная ширина кнопок */
+        height: 30px; /* Фиксированная высота кнопок */
+        font-size: 14px; /* Размер шрифта */
+        margin: 40px; /* Отступы вокруг кнопки */
+        margin-left: 10px;
+        margin-right: -10px;
+        cursor: pointer; /* Курсор при наведении */
+        border-radius: 10px; /* Скругление углов */
+        font-family: 'Mulish', sans-serif;
+    }
+    
+    .raschet {
+        display: flex; /* Используем flexbox для выравнивания элементов в строку */
+        justify-content: space-between; /* Распределяем пространство между элементами */
+        align-items: center; /* Выравниваем по вертикали */
+        margin: -10px; /* Отступы сверху и снизу между элементами */
+    }
+    
+    
+    .delete-image {
+        width: 20px; /* Ширина изображения */
+        height: auto; /* Автоматическая высота для сохранения пропорций */
+        display: flex;
+        margin-left: -45px; 
+        margin-right: 40px;/* Отступ между кнопкой и изображением */
+        cursor: pointer; /* Курсор при наведении */
+    }
+    
+    .dobavit {
+        background-color: rgb(141, 158, 141); /* Зеленый цвет кнопки */
+        color: white; /* Белый цвет шрифта */
+        border: none; /* Убираем рамку */
+        padding: 10px; /* Поля внутри кнопки */
+        text-align: center; /* Центрируем текст */
+        text-decoration: none; /* Убираем подчеркивание */
+        justify-content: center; /* Центрируем содержимое по горизонтали */
+        align-items: center; /* Центрируем содержимое по вертикали */
+        width: 335px; /* Фиксированная ширина кнопок */
+        height: 100px; /* Фиксированная высота кнопок */
+        font-size: 14px; /* Размер шрифта */
+        margin-top: 30px; /* Отступы вокруг кнопки */
+        cursor: pointer; /* Курсор при наведении */
+        border-radius: 5px; /* Скругление углов */
+        font-family: 'Mulish', sans-serif;
+    }
+    .dobavit:hover {
+        background-color: #596a5a; /* Более темный зеленый при наведении */
+    }
+
+    .image-container {
+        position: fixed;
+        display: flex; /* Используем Flexbox */
+        justify-content: space-around; /* Распределяем изображения по горизонтали */
+        margin-bottom: -1030px;
+    }
+    
+    .responsive-image {
+        max-width: 90px;
+        height: auto; 
+        margin-top: 10px; 
+    }
+
+    .content>form{
+        display: flex;
+        flex-direction: column;
+        height: 368px;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .counter {
+        display: flex;
+        align-items: center;
+        margin-left: 20px; /* Отступ между критерием и счетчиком */
+    }
+    
+    button {
+        background-color: #109a20; /* Зеленый цвет кнопок */
+        color: white; /* Цвет текста кнопок */
+        border: none; /* Убираем рамки */
+        padding: 5px 10px; /* Отступы внутри кнопок */
+        cursor: pointer; /* Курсор при наведении */
+        margin: 0 5px; /* Отступы между кнопками */
+        border-radius: 5px; /* Скругление углов */
+    }
+    
+    button:hover {
+        background-color: #0e7a1f; /* Цвет кнопок при наведении */
+    }
+    
+    .count {
+        font-size: 20px; /* Размер текста счетчика */
+        min-width: 30px; /* Минимальная ширина для выравнивания */
+        text-align: center; /* Выравнивание текста по центру */
+    }
+    
+    .file-upload {
+        margin-top: -10px; /* Отступ сверху для визуального отделения */
+    }
+    
+    #uploadButton {
+        display: flex;
+        background-color: #109a20; /* Цвет кнопки */
+        color: white; /* Цвет текста */
+        border: none; /* Убираем рамку */
+        padding: 10px 50px; /* Отступы внутри кнопки */
+        cursor: pointer; /* Курсор для кнопки */
+        border-radius: 5px; /* Скругление углов */
+        font-family: 'Mulish', sans-serif;
+    }
+    .uploadButton{
+        font-family: 'Mulish', sans-serif;
+        display: flex;
+        margin-left: 30px;
+    }
+    
+    #uploadButton:hover {
+        background-color: #0e7a1f; /* Цвет кнопки при наведении */
+        
+    }
+    .upload-success {
+        background-color: #8f9c90; 
+        width: 200px;
+        color: rgb(255, 255, 255); /* Цвет текста */
+        padding: 10px; /* Внутренние отступы */
+        border-radius: 10px; /* Скругленные углы */
+        margin-top: 10px; /* Отступы по вертикали */
+        text-align: center; /* Выравнивание текста по центру */
+        font-size: 14px;
+        font-family: 'Mulish', sans-serif;
+    }
+    
+    .save-button-container {
+        position: fixed; /* Закрепляем кнопку относительно окна */
+        bottom: 10px; /* Привязка к нижней части окна */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translateX(-50%); /* Центрируем, сдвигая на половину ширины */
+        width: auto; /* Можете установить ширину, если требуется */
+    }
+
+    #saveButton {
+        position: fixed;
+        background-color: #109a20;
+        color: white;
+        border: none;
+        padding: 15px 90px; /* Увеличенные отступы */
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 14px; /* Акцентированное увеличение размера шрифта */
+        margin-top: 900px;
+        font-family: 'Mulish', sans-serif;
+    }
+    
+    #saveButton:hover {
+        background-color: #0d7d1a; /* Цвет кнопки при наведении */
+    }
+    
+    #saveSuccess {
+        position: absolute; /* Абсолютное позиционирование */
+        top: 50%; /* Середина по вертикали */
+        left: 50%; /* Середина по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        background-color: rgba(0, 128, 0, 0.557); /* Фон с полупрозрачностью */
+        color: white; /* Цвет текста */
+        padding: 10px 10px; /* Внутренние отступы */
+        border-radius: 5px; /* Скругление углов */
+        font-size: 14px; /* Размер шрифта */
+        display: none; /* Изначально скрываем */
+        z-index: 1000; /* Чтобы был поверх остальных элементов */
+    }
+    
+    
+}
