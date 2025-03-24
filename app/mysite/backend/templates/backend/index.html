@@ -1,13 +1,17 @@
-<!doctype html>
-<html lang="en">
+{% extends 'backend/layout.html' %}
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Index</title>
-</head>
+{% block title %}
+  {{ title }}
+{% endblock title %}
 
-<body>
-  Hello world
-</body>
-
-</html>
+{% block content %}
+  {% for i in colors %}
+    {% if i == 'pink' %}
+      {% filter upper %}
+        <b>{{ i }}</b><br/>
+      {% endfilter %}
+    {% endif %}
+  {% endfor %}
+  {{ s.c }}
+  <h1>{{ title }}</h1>
+{% endblock content %}
