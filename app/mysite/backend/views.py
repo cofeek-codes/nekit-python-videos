@@ -5,7 +5,8 @@ from django.shortcuts import render
 
 def index(request):
     data = {
-        'title': 'green page',
+        'title': 'main page',
+        'h1': 'Заголовок 1',
         'colors': ['pink', 'green', 'red']
     }
 

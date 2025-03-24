@@ -6,12 +6,7 @@
 
 {% block content %}
   {% for i in colors %}
-    {% if i == 'pink' %}
-      {% filter upper %}
-        <b>{{ i }}</b><br/>
-      {% endfilter %}
-    {% endif %}
+    <b>{{ i }}</b><br/>
   {% endfor %}
-  {{ s.c }}
-  <h1>{{ title }}</h1>
+  <h1>{{ h1 }}</h1>
 {% endblock content %}
