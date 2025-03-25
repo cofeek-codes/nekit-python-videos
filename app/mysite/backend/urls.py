@@ -11,4 +11,13 @@ urlpatterns = [
     # admin
     path('admin_main', views.admin_main, name='admin_main'),
     path('eng_teacher_list', views.eng_teacher_list, name='eng_teacher_list'),
+    path('edit_groups', views.edit_groups, name='edit_groups'),
+    path('math_teacher_list', views.math_teacher_list, name='math_teacher_list'),
+    path('rus_teacher_list', views.rus_teacher_list, name='rus_teacher_list'),
+    path('new_period', views.new_period, name='new_period'),
+    path('teacher_edit', views.teacher_edit, name='teacher_edit'),
+    path('admin_edit', views.admin_edit, name='admin_edit'),
+    path('admin_table', views.admin_table, name='admin_table'),
+    path('dpo_table', views.dpo_table, name='dpo_table'),
+    path('criteria_table', views.criteria_table, name='criteria_table'),
     ]
