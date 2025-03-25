@@ -25,15 +25,15 @@
   <div class="form-container" id="criteriaContainer">
     <div class="raschet">
       <a href="#" class="redact_gr" contentEditable="true">Критерий 1</a>
-      <img src="img/delete.svg" alt="Удалить" class="delete-image">
+      <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
     </div>
     <div class="raschet">
       <a href="#" class="redact_gr" contentEditable="true">Критерий 2</a>
-      <img src="img/delete.svg" alt="Удалить" class="delete-image">
+      <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
     </div>
     <div class="raschet">
       <a href="#" class="redact_gr" contentEditable="true">Критерий 3</a>
-      <img src="img/delete.svg" alt="Удалить" class="delete-image">
+      <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
     </div>
   </div>
   
@@ -59,7 +59,7 @@
     <a href="{% url 'statistics_def' %}">
       <img src="{% static 'backend/img/statistics-def.svg' %}" alt="Третья" class="responsive-image">
     </a>
-    <a href="{% url 'admin_statistics' %}">
+    <a href="{% url 'statistics_def' %}">
       <img src="{% static 'backend/img/rating-def.svg' %}" alt="Четвертая" class="responsive-image">
     </a>
   </div>

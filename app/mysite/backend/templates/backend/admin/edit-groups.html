@@ -24,15 +24,15 @@
      <div id="criteriaContainer">
                 <div class="raschet">
                     <a href="teacher-redact.html" class="redact_gr">Учителя</a>
-                    <img src="img/delete.svg" alt="Удалить" class="delete-image">
+                    <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
                 </div>
                 <div class="raschet">
                     <a href="редактирование-дпо.html" class="redact_gr">Педагоги доп.образования</a>
-                    <img src="img/delete.svg" alt="Удалить" class="delete-image">
+                    <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
                 </div>
                 <div class="raschet">
                     <a href="админы-школы.html" class="redact_gr">Администрация школы</a>
-                    <img src="img/delete.svg" alt="Удалить" class="delete-image">
+                    <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
                 </div>
             </div>
             
@@ -55,7 +55,7 @@
   <a href="{% url 'statistics_def' %}">
     <img src="{% static 'backend/img/statistics-def.svg' %}" alt="Третья" class="responsive-image">
   </a>
-  <a href="{% url 'admin_statistics' %}">
+  <a href="{% url 'statistics_def' %}">
     <img src="{% static 'backend/img/rating-def.svg' %}" alt="Четвертая" class="responsive-image">
   </a>
 </div>

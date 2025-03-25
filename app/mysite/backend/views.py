@@ -35,7 +35,7 @@ def eng_teacher_list(request):
 
 def edit_groups(request):
 
-    return render(request, 'backend/admin/edit_groups.html')
+    return render(request, 'backend/admin/edit-groups.html')
 
 def pe_teacher_list(request):
 
@@ -66,7 +66,7 @@ def admin_edit(request):
     return render(request, 'backend/admin/админы-школы.html')
 
 
-def admin_table(request):
+def statistics_def(request):
 
     return render(request, 'backend/admin/общая-таблица.html')
 

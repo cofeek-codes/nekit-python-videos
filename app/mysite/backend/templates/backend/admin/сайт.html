@@ -21,16 +21,16 @@
 {% block content %}
 
             <div class="raschet">
-                <a href="edit-groups.html" class="redact_gr">Редактировать группы</a>
+                <a href="{% url 'edit_groups' %}" class="redact_gr">Редактировать группы</a>
             </div>
             <div class="raschet">
-                <a href="редактировать-критерии.html" class="redact_gr">Редактировать критерии</a>
+                <a href="{% url 'criteria_table' %}" class="redact_gr">Редактировать критерии</a>
             </div>
             <div class="raschet">
-                <a href="общая-таблица.html" class="redact_gr">Общая таблица</a>
+                <a href="{% url 'statistics_def' %}" class="redact_gr">Общая таблица</a>
             </div>
             <div class="raschet">
-                <a href="new-period.html" class="redact_gr">Открыть новый период</a>
+                <a href="{% url 'new_period' %}" class="redact_gr">Открыть новый период</a>
             </div>
 
 {% endblock content %}
@@ -47,7 +47,7 @@
           <a href="{% url 'statistics_def' %}">
             <img src="{% static 'backend/img/statistics-def.svg' %}" alt="Третья" class="responsive-image">
           </a>
-          <a href="{% url 'admin_statistics' %}">
+          <a href="{% url 'statistics_def' %}">
             <img src="{% static 'backend/img/rating-def.svg' %}" alt="Четвертая" class="responsive-image">
           </a>
         </div>
