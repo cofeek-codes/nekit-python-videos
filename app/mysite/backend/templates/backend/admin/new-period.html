@@ -1,14 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Открыть новый период</title>
-</head>
-<body>
+{% extends 'backend/user/layout.html' %}
+{% load static %}
+
+{% block styles %}
+      <link rel="stylesheet" href="{% static 'backend/css/admin/style.css' %}">
+{% endblock styles %}
+
+{% block title %}
+  Открыть новый период
+{% endblock title %}
+
+
+{% block header %}
+  Открыть новый период
+{% endblock header %}
+
+
+{% block scripts %}
+{% endblock scripts %}
+
+{% block content %}
+
     <h1>Открыть новый период</h1>
     <p>Здесь вы можете открыть новый период.</p>
-    <a href="сайт.html">Назад</a>
-</body>
-</html>
+    <a href="{% url 'admin_main' %}">Назад</a>
+
+{% endblock content %}
+
+{% block footer %}
+  
+          <div class="image-container">
+          <a href="{% url 'admin_main' %}">
+            <img src="{% static 'backend/img/Pers-act.svg' %}" alt="Первая" class="responsive-image">
+          </a>
+          <a href="{% url 'home_def' %}">
+            <img src="{% static 'backend/img/home-def.svg' %}" alt="Вторая" class="responsive-image">
+          </a>
+          <a href="{% url 'statistics_def' %}">
+            <img src="{% static 'backend/img/statistics-def.svg' %}" alt="Третья" class="responsive-image">
+          </a>
+          <a href="{% url 'admin_statistics' %}">
+            <img src="{% static 'backend/img/rating-def.svg' %}" alt="Четвертая" class="responsive-image">
+          </a>
+        </div>
+
+{% endblock footer %}
+  
