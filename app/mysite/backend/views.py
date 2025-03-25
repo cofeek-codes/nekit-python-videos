@@ -10,6 +10,11 @@ def index(request):
     return render(request, 'backend/user/начало.html')
 
 
+def home_def(request):
+
+    return render(request, 'backend/user/home_def.html')
+
+
 def rating(request):
 
     return render(request, 'backend/user/рейтинг.html')
