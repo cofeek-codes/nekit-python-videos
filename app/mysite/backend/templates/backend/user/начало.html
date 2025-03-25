@@ -84,16 +84,16 @@
 {% block footer %}
   
           <div class="image-container">
-          <a href="pers-act.html">
+          <a href="{% url 'index'  %}">
             <img src="{% static 'backend/img/Pers-act.svg' %}" alt="Первая" class="responsive-image">
           </a>
           <a href="home-def.html">
             <img src="{% static 'backend/img/home-def.svg' %}" alt="Вторая" class="responsive-image">
           </a>
-          <a href="статистика.html">
+          <a href="{% url 'statistics'  %}">
             <img src="{% static 'backend/img/statistics-def.svg' %}" alt="Третья" class="responsive-image">
           </a>
-          <a href="рейтинг.html">
+          <a href="{% url 'rating'  %}">
             <img src="{% static 'backend/img/rating-def.svg' %}" alt="Четвертая" class="responsive-image">
           </a>
         </div>
