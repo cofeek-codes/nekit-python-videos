@@ -9,6 +9,12 @@
   Стимулирование педагогов
 {% endblock title %}
 
+
+{% block header %}
+  Стимулирование педагогов
+{% endblock header %}
+
+
 {% block scripts %}
   <script src="{% static 'backend/js/user/начало.js' %}"></script>
 {% endblock scripts %}
@@ -74,3 +80,23 @@
             
 
 {% endblock content %}
+
+{% block footer %}
+  
+          <div class="image-container">
+          <a href="pers-act.html">
+            <img src="{% static 'backend/img/Pers-act.svg' %}" alt="Первая" class="responsive-image">
+          </a>
+          <a href="home-def.html">
+            <img src="{% static 'backend/img/home-def.svg' %}" alt="Вторая" class="responsive-image">
+          </a>
+          <a href="статистика.html">
+            <img src="{% static 'backend/img/statistics-def.svg' %}" alt="Третья" class="responsive-image">
+          </a>
+          <a href="рейтинг.html">
+            <img src="{% static 'backend/img/rating-def.svg' %}" alt="Четвертая" class="responsive-image">
+          </a>
+        </div>
+
+{% endblock footer %}
+  

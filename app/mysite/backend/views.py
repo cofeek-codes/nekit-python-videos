@@ -8,3 +8,7 @@ from .forms import AForm
 def index(request):
 
     return render(request, 'backend/user/начало.html')
+
+def rating(request):
+
+    return render(request, 'backend/user/рейтинг.html')

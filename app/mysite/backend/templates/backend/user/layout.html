@@ -2,7 +2,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,30 +31,21 @@
           <a href="edit-groups.html"> <!-- Укажите ссылку на нужную страницу -->
             <img src="{% static 'backend/img/стрелочка.svg' %}" alt="стрелочка" class="arrow-image">
           </a>
-          <div class="stimul_zag">Стимулирование педагогов</div>
+          <div class="stimul_zag">
+                {% block header %}
+                {% endblock header %}
+          </div>
         </div>
 
         <!-- Горизонтальная линия под заголовком -->
         <hr class="divider">
         {% block content %}
         {% endblock content %}
-        <div class="image-container">
-          <a href="pers-act.html">
-            <img src="{% static 'backend/img/Pers-act.svg' %}" alt="Первая" class="responsive-image">
-          </a>
-          <a href="home-def.html">
-            <img src="{% static 'backend/img/home-def.svg' %}" alt="Вторая" class="responsive-image">
-          </a>
-          <a href="статистика.html">
-            <img src="{% static 'backend/img/statistics-def.svg' %}" alt="Третья" class="responsive-image">
-          </a>
-          <a href="рейтинг.html">
-            <img src="{% static 'backend/img/rating-def.svg' %}" alt="Четвертая" class="responsive-image">
-          </a>
-        </div>
+        {% block footer %}
+        {% endblock footer %}
       </form>
-      {% block scripts %}
-      {% endblock scripts %}
+        {% block scripts %}
+        {% endblock scripts %}      
 </body>
 
 </html>

@@ -1,35 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="рейтинг.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="main">
-        <div class="header">
-           
-        </div>
+{% extends 'backend/user/layout.html' %}
+{% load static %}
 
-        <div class="content">
-        <form action="">
-            <img src="img/Status Bar - iPhone.svg" alt="Верх" class="header-image">
-            
-            <div class="header-container">
-                <a href="начало.html"> <!-- Укажите ссылку на нужную страницу -->
-                    <img src="img/стрелочка.svg" alt="стрелочка" class="arrow-image">
-                </a>
-                <div class="stimul_zag">Рейтинг</div>
-            </div>
-            
-            
-            <!-- Горизонтальная линия под заголовком -->
-            <hr class="divider">
+{% block styles %}
+<link rel="stylesheet" href="{% static 'backend/css/user/рейтинг.css' %}">
+{% endblock styles %}
+
+{% block title %}
+  Рейтинг
+{% endblock title %}
+
+{% block header %}
+  Рейтинг
+{% endblock header %}
+
+
+{% block scripts %}
+{% endblock scripts %}
+
+{% block content %}
             <table>
                 <thead>
                     <tr>
@@ -88,22 +76,24 @@
             <div class="raschet">
                 <a  class="redact_gr">Выгрузить в Exel</a>
             </div>
-            <div class="image-container">
-                <a href="начало.html">
-                    <img src="img/pers-def.svg" alt="Первая" class="responsive-image">
-                </a>
-                <a href="home-def.html">
-                    <img src="img/home-def.svg" alt="Вторая" class="responsive-image">
-                </a>
-                <a href="статистика.html">
-                    <img src="img/statistics-def.svg" alt="Третья" class="responsive-image">
-                </a>
-                <a href="rating-def.html">
-                    <img src="img/rating-act.svg" alt="Четвертая" class="responsive-image">
-                </a>
-            </div>
             
-        </form>
-    </body>
-</html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+{% endblock content %}
+
+{% block footer %}
+
+          <div class="image-container">
+          <a href="pers-act.html">
+            <img src="{% static 'backend/img/pers-def.svg' %}" alt="Первая" class="responsive-image">
+          </a>
+          <a href="home-def.html">
+            <img src="{% static 'backend/img/home-def.svg' %}" alt="Вторая" class="responsive-image">
+          </a>
+          <a href="статистика.html">
+            <img src="{% static 'backend/img/statistics-def.svg' %}" alt="Третья" class="responsive-image">
+          </a>
+          <a href="рейтинг.html">
+            <img src="{% static 'backend/img/rating-act.svg' %}" alt="Четвертая" class="responsive-image">
+          </a>
+        </div>
+
+{% endblock footer %}
