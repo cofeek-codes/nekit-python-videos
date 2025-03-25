@@ -45,6 +45,7 @@ def create(request):
             
     form = AForm()
     data = {
+        'title': 'add to db',
         'form': form,
         'error': error
     }

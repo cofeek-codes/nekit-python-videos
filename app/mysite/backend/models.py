@@ -6,7 +6,7 @@ class A(models.Model):
     title = models.CharField('title', max_length=50)
     anons = models.CharField('anons', max_length=50)
     full_text = models.TextField('full text')
-    date = models.DateTimeField('publish date')
+    date = models.CharField('publish date', max_length=50)
 
     def __str__(self):
         return f"News - {self.title}"
