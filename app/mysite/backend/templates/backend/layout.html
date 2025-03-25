@@ -2,18 +2,25 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <link href="{% static 'backend/css/style.css' %}" rel="stylesheet"/>
-    <title>
-      {% block title %}
-      {% endblock title %}
-    </title>
-  </head>
-  <body>
-    <a href="{% url 'index' %}">main</a><br/>
-    <a href="{% url 'about' %}">about</a><br/>
-{% block content %}
-{% endblock content %}
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link href="{% static 'backend/css/style.css' %}" rel="stylesheet" />
+  <title>
+    {% block title %}
+    {% endblock title %}
+  </title>
+</head>
+
+<body>
+  <a href="{% url 'index' %}">main</a><br />
+  <a href="{% url 'about' %}">about</a><br />
+  <a href="{% url 'profile' %}">profile</a><br />
+  {% block content %}
+  {% endblock content %}
+</body>
+
 </html>
+
+<!-- 1:39:15 -->
+<!-- https://niyakaduk.beget.app/playback/presentation/2.3/5816fdd30c4318531b012a9046007ce36d5441c5-1740049429781 -->

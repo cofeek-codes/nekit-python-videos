@@ -21,3 +21,11 @@ def about(request):
     }
 
     return render(request, 'backend/about.html', data)
+
+
+def profile(request):
+    data = {
+        'user': 'some user'
+    }
+
+    return render(request, 'backend/profile.html', data)
