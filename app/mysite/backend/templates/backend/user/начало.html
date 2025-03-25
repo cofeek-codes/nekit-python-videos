@@ -1,35 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="начало.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="main">
-        <div class="header">
-           
-        </div>
+{% extends 'backend/user/layout.html' %}
+{% load static %}
 
-        <div class="content">
-        <form action="">
-            <img src="img/Status Bar - iPhone.svg" alt="Верх" class="header-image">
-            
-            <div class="header-container">
-                <a href="edit-groups.html"> <!-- Укажите ссылку на нужную страницу -->
-                    <img src="img/стрелочка.svg" alt="стрелочка" class="arrow-image">
-                </a>
-                <div class="stimul_zag">Стимулирование педагогов</div>
-            </div>
-            
-            <!-- Горизонтальная линия под заголовком -->
-            <hr class="divider">
+{% block styles %}
+      <link rel="stylesheet" href="{% static 'backend/css/user/начало.css' %}">
+{% endblock styles %}
 
+{% block title %}
+  Стимулирование педагогов
+{% endblock title %}
+
+{% block scripts %}
+  <script src="{% static 'backend/js/user/начало.js' %}"></script>
+{% endblock scripts %}
+
+{% block content %}
+  
             <div class="raschet">
                 <a class="redact_gr" href="#" contentEditable="true">Критерий 1</a>
                 <div class="counter">
@@ -87,23 +72,5 @@
             
             <div id="uploadedFiles"></div> 
             
-            <div class="image-container">
-                <a href="pers-act.html">
-                    <img src="img/Pers-act.svg" alt="Первая" class="responsive-image">
-                </a>
-                <a href="home-def.html">
-                    <img src="img/home-def.svg" alt="Вторая" class="responsive-image">
-                </a>
-                <a href="статистика.html">
-                    <img src="img/statistics-def.svg" alt="Третья" class="responsive-image">
-                </a>
-                <a href="рейтинг.html">
-                    <img src="img/rating-def.svg" alt="Четвертая" class="responsive-image">
-                </a>
-            </div>
-            
-            
-        </form>
-    </body>
-</html>
-<script src="начало.js"></script>
+
+{% endblock content %}
