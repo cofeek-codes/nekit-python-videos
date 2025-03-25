@@ -10,4 +10,5 @@ urlpatterns = [
     path('statistics', views.statistics, name='statistics'),
     # admin
     path('admin_main', views.admin_main, name='admin_main'),
+    path('eng_teacher_list', views.eng_teacher_list, name='eng_teacher_list'),
     ]

@@ -29,3 +29,8 @@ def admin_main(request):
 
     return render(request, 'backend/admin/сайт.html')
 
+def eng_teacher_list(request):
+
+    return render(request, 'backend/admin/angl-teacher.html')
+
+
