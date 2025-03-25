@@ -5,25 +5,12 @@
 {% endblock title %}
 
 {% block content %}
-  <form method="POST" class="form_django">
+<form method="POST" class="form_django">
   {% csrf_token %}
   <div>
-    <b>title</b>
-    {{ form.title }}
-  </div>
-  <div>
-    <b>description</b>
-    {{ form.anons }}
-  </div>
-  <div>
-    <b>text</b>
-    {{ form.full_text }}
-  </div>
-  <div>
-    <b>date</b>
-    {{ form.date }}
+    {{ form }}
   </div>
   <span>{{ error }}</span>
   <button type="submit">add info</button>
-  </form>
+</form>
 {% endblock content %}
