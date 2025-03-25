@@ -1,5 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+
+from .forms import AForm
 
 # Create your views here.
 
@@ -29,3 +31,24 @@ def profile(request):
     }
 
     return render(request, 'backend/profile.html', data)
+
+def create(request):
+    error = ''
+    if request.method == 'POST':
+        form = AForm(request.POST)
+        
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+        else:
+            error = 'false data'
+            
+    form = AForm()
+    data = {
+        'form': form,
+        'error': error
+    }
+        
+    return render(request, 'backend/create.html', data)
+    
+        

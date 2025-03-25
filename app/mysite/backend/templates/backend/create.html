@@ -1,0 +1,29 @@
+{% extends 'backend/layout.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block content %}
+  <form method="POST" class="form_django">
+  {% csrf_token %}
+  <div>
+    <b>title</b>
+    {{ form.title }}
+  </div>
+  <div>
+    <b>description</b>
+    {{ form.anons }}
+  </div>
+  <div>
+    <b>text</b>
+    {{ form.full_text }}
+  </div>
+  <div>
+    <b>date</b>
+    {{ form.date }}
+  </div>
+  <span>{{ error }}</span>
+  <button type="submit">add info</button>
+  </form>
+{% endblock content %}
