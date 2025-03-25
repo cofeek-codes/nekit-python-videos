@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'backend/css/admin/style.css' %}">
+        {% block styles %}
+        {% endblock styles %}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>
+    {% block title %}
+    {% endblock title %}
+  </title>
+</head>
+
+<body>
+  <div class="main">
+    <div class="header">
+
+    </div>
+
+    <div class="content">
+      <form action="">
+        <img src="{% static 'backend/img/Status Bar - iPhone.svg' %}" alt="Верх" class="header-image">
+
+        <div class="header-container">
+          <a href="edit-groups.html"> <!-- Укажите ссылку на нужную страницу -->
+            <img src="{% static 'backend/img/стрелочка.svg' %}" alt="стрелочка" class="arrow-image">
+          </a>
+          <div class="stimul_zag">
+                {% block header %}
+                {% endblock header %}
+          </div>
+        </div>
+
+        <!-- Горизонтальная линия под заголовком -->
+        <hr class="divider">
+        {% block content %}
+        {% endblock content %}
+        {% block footer %}
+        {% endblock footer %}
+      </form>
+        {% block scripts %}
+        {% endblock scripts %}      
+</body>
+
+</html>

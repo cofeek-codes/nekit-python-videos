@@ -18,3 +18,9 @@ def rating(request):
 def statistics(request):
 
     return render(request, 'backend/user/статистика.html')
+
+
+def admin_main(request):
+
+    return render(request, 'backend/admin/сайт.html')
+

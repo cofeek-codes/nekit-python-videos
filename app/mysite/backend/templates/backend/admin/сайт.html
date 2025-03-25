@@ -1,32 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="main">
-        <div class="header">
-           
-        </div>
+{% extends 'backend/user/layout.html' %}
+{% load static %}
 
-        <div class="content">
-        <form action="">
-            <img src="img/Status Bar - iPhone.svg" alt="Верх" class="header-image">
-            
-            <div class="header-container">
-                <img src="img/стрелочка.svg" alt="стрелочка" class="arrow-image"> <!-- Стрелочка здесь -->
-                <div class="stimul_zag">Стимулирование педагогов</div>
-            </div>
-            
-            <!-- Горизонтальная линия под заголовком -->
-            <hr class="divider">
+{% block styles %}
+      <link rel="stylesheet" href="{% static 'backend/css/admin/style.css' %}">
+{% endblock styles %}
+
+{% block title %}
+  Стимулирование педагогов
+{% endblock title %}
+
+
+{% block header %}
+  Стимулирование педагогов
+{% endblock header %}
+
+
+{% block scripts %}
+{% endblock scripts %}
+
+{% block content %}
 
             <div class="raschet">
                 <a href="edit-groups.html" class="redact_gr">Редактировать группы</a>
@@ -40,21 +32,25 @@
             <div class="raschet">
                 <a href="new-period.html" class="redact_gr">Открыть новый период</a>
             </div>
-            
-            <div class="image-container">
-                <a href="pers-act.html">
-                    <img src="img/Pers-act.svg" alt="Первая" class="responsive-image">
-                </a>
-                <a href="home-def.html">
-                    <img src="img/home-def.svg" alt="Вторая" class="responsive-image">
-                </a>
-                <a href="statistics-def.html">
-                    <img src="img/statistics-def.svg" alt="Третья" class="responsive-image">
-                </a>
-                <a href="общая-таблица.html">
-                    <img src="img/rating-def.svg" alt="Четвертая" class="responsive-image">
-                </a>
-            </div>           
-        </form>
-    </body>
-</html>
+
+{% endblock content %}
+
+{% block footer %}
+  
+          <div class="image-container">
+          <a href="pers-act.html">
+            <img src="{% static 'backend/img/Pers-act.svg' %}" alt="Первая" class="responsive-image">
+          </a>
+          <a href="home-def.html">
+            <img src="{% static 'backend/img/home-def.svg' %}" alt="Вторая" class="responsive-image">
+          </a>
+          <a href="статистика.html">
+            <img src="{% static 'backend/img/statistics-def.svg' %}" alt="Третья" class="responsive-image">
+          </a>
+          <a href="рейтинг.html">
+            <img src="{% static 'backend/img/rating-def.svg' %}" alt="Четвертая" class="responsive-image">
+          </a>
+        </div>
+
+{% endblock footer %}
+  
