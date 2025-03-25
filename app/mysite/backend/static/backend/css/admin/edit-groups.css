@@ -1,0 +1,179 @@
+body {
+    font-family: 'Mulish', sans-serif; /* Устанавливаем Mulish как основной шрифт */
+}
+
+@media all and (min-width: 375px) {
+    .main {
+        width: 375px;
+        height: 812px; 
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid #109a20; 
+        border-radius: 8px; 
+        position: relative;
+    }
+
+    .header-image {
+        position: absolute;
+        width: 100%; /* Занимает всю ширину верхней границы */
+        margin-top: -320px;
+        height: auto; /* Автоматическая высота для сохранения пропорций */
+    }
+    
+    .header-container {
+        position: absolute;
+        top: 45px;
+        display: flex; /* Используем flex для выравнивания */
+        align-items: center; /* Выравнивание по вертикали */
+        margin: 10px; /* Отступы сверху и снизу */
+        
+    }
+
+    .stimul_zag {
+        font-size: 20px; /* Размер шрифта для заголовка */
+    }
+
+    .arrow-image {
+        position: fixed;
+        width: 30px; /* Укажите размер стрелочки по вашему усмотрению */
+        height: auto; /* Сохраняем пропорции */
+        position: absolute; /* Абсолютное позиционирование */
+        display: flex;
+        margin-top: -14px;
+        margin-left: -60px;
+        position: absolute;
+    }
+    .divider {
+        display: flex;
+        border: none; /* Убираем стандартные границы */
+        border-top: 2px solid #e9e9e9; /* Устанавливаем верхнюю границу */
+        margin: 0px; /* Отступы сверху и снизу */
+        width: 375px; /* Ширина линии */
+        margin-bottom: 190px;
+        position: absolute;
+    }
+    #criteriaContainer {
+        margin-top: 130px; /* Отступ сверху для всего контейнера */
+    }
+
+    .redact_gr {
+        background-color: rgb(76, 175, 80); /* Зеленый цвет кнопки */
+        color: white; /* Белый цвет шрифта */
+        border: none; /* Убираем рамку */
+        display: flex;
+        padding: 10px; /* Поля внутри кнопки */
+        text-align: center; /* Центрируем текст */
+        text-decoration: none; /* Убираем подчеркивание */
+        justify-content: center; /* Центрируем содержимое по горизонтали */
+        align-items: center; /* Центрируем содержимое по вертикали */
+        width: 300px; /* Фиксированная ширина кнопок */
+        height: 30px; /* Фиксированная высота кнопок */
+        font-size: 14px; /* Размер шрифта */
+        margin-top: 40px;
+        margin-right: 10px;
+        cursor: pointer; /* Курсор при наведении */
+        border-radius: 5px; /* Скругление углов */
+        font-family: 'Mulish', sans-serif;
+    }
+    .raschet {
+        display: flex; /* Используем flexbox для выравнивания элементов в строку */
+        justify-content: space-between; /* Распределяем пространство между элементами */
+        align-items: center; /* Выравниваем по вертикали */
+        margin: 0px; /* Отступы сверху и снизу между элементами */
+    }
+    
+    .delete-image {
+        width: 20px; 
+        height: auto; 
+        display: flex;
+        margin-top: 50px;
+        cursor: pointer; 
+    }
+    
+    .dobavit {
+        position: fixed;
+        bottom: 150px;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        padding: 20px; 
+        background-color: #cdcdcd; 
+        border-radius: 8px; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+        margin: 20px; 
+        width: 315px; 
+        height: 30px; 
+        margin-bottom: -35px;
+    }
+    .dobavit:hover {
+        background-color: #596a5a; /* Более темный зеленый при наведении */
+    }
+    
+    .dobavit form {
+        display: flex; /* Используем flex для размещения элементов в строку */
+        width: 100%; /* Делаем форму на всю ширину контейнера */
+    }
+    
+    .dobavit input[type="text"] {
+        padding: 10px; /* Поля внутри поля ввода */
+        border: 2px solid #7ac776; /* Цвет рамки */
+        border-radius: 5px; /* Скругление углов */
+        font-size: 16px; /* Размер шрифта */
+        outline: none; /* Убираем стандартыный стиль выделения */
+        transition: border-color 0.3s; /* Плавный переход для цвета границы */
+        font-family: 'Mulish', sans-serif;
+        font-size: 14px;
+    }
+    
+    .dobavit input[type="text"]:focus {
+        border-color: #9ccfa4; /* Цвет рамки при фокусе */
+        
+    }
+
+    .dobavit button {
+        background-color: rgb(76, 175, 80); /* Зеленый цвет кнопки */
+        color: white; /* Белый цвет шрифта */
+        border: none; /* Убираем рамку */
+        padding: 10px 15px; /* Поля внутри кнопки */
+        margin-left: 10px; /* Отступ слева от поля ввода */
+        border-radius: 5px; /* Скругление углов кнопки */
+        font-size: 16px; /* Размер шрифта кнопки */
+        cursor: pointer; /* Указатель курсора при наведении */
+        transition: background-color 0.3s, transform 0.3s; /* Плавный переход */
+        font-family: 'Mulish', sans-serif;
+        font-size: 14px;
+    }
+    
+    .dobavit button:hover {
+        background-color: #45a049; /* Цвет кнопки при наведении */
+    }
+    
+    .dobavit:hover {
+        background-color: #bec8bf; /* Более темный зеленый при наведении */
+    }
+
+    .image-container {
+        position: fixed; /* Закрепляет элемент на заданной позиции */
+        bottom: 0px; /* Расстояние от низа .main (или родительского контейнера) */
+        display: flex; /* Используем Flexbox */
+        justify-content: space-around; /* Распределяем изображения по горизонтали */
+        margin-bottom: 0px; /* Отступ сверху и снизу */
+    }
+
+    .responsive-image {
+        max-width: 90px; /* Ограничиваем ширину изображения */
+        height: auto; /* Обеспечиваем пропорциональность */
+        margin: 0px; /* Отступы между изображениями */
+    }
+
+    
+    .content>form{
+        display: flex;
+        flex-direction: column;
+        height: 368px;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+}

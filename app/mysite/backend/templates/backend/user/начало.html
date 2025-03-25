@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="начало.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+           
+        </div>
+
+        <div class="content">
+        <form action="">
+            <img src="img/Status Bar - iPhone.svg" alt="Верх" class="header-image">
+            
+            <div class="header-container">
+                <a href="edit-groups.html"> <!-- Укажите ссылку на нужную страницу -->
+                    <img src="img/стрелочка.svg" alt="стрелочка" class="arrow-image">
+                </a>
+                <div class="stimul_zag">Стимулирование педагогов</div>
+            </div>
+            
+            <!-- Горизонтальная линия под заголовком -->
+            <hr class="divider">
+
+            <div class="raschet">
+                <a class="redact_gr" href="#" contentEditable="true">Критерий 1</a>
+                <div class="counter">
+                    <button class="decrement" type="button">-</button>
+                    <span class="count">0</span>
+                    <button class="increment" type="button">+</button>
+                </div>
+            </div>
+            <div class="file-upload">
+                <input type="file" class="fileInput" style="display: none;" /> <!-- Уникальный input для файлов -->
+                <button class="uploadButton" type="button">Загрузить файл</button>
+            </div>
+            <div id="uploadSuccess" class="notification" style="display: none;">Файл успешно загружен!</div>
+            
+            <div class="raschet">
+                <a class="redact_gr" href="#" contentEditable="true">Критерий 2</a>
+                <div class="counter">
+                    <button class="decrement" type="button">-</button>
+                    <span class="count">0</span>
+                    <button class="increment" type="button">+</button>
+                </div>
+            </div>
+            <div class="file-upload">
+                <input type="file" class="fileInput" style="display: none;" /> <!-- Уникальный input для файлов -->
+                <button class="uploadButton" type="button">Загрузить файл</button>
+            </div>
+            <div id="uploadSuccess" class="notification" style="display: none;">Файл успешно загружен!</div>
+            
+            <div class="raschet">
+                <a class="redact_gr" href="#" contentEditable="true">Критерий 3</a>
+                <div class="counter">
+                    <button class="decrement" type="button">-</button>
+                    <span class="count">0</span>
+                    <button class="increment" type="button">+</button>
+                </div>
+            </div>
+            <div class="file-upload">
+                <input type="file" class="fileInput" style="display: none;" /> <!-- Уникальный input для файлов -->
+                <button class="uploadButton" type="button">Загрузить файл</button>
+            </div>
+            <div id="uploadSuccess" class="notification" style="display: none;">Файл успешно загружен!</div>
+            
+            <!-- Новый элемент для отображения суммы -->
+            <div id="totalCount" class="upload-success" style="display: none;"></div>
+            
+            <!-- Кнопка для сохранения изменений -->
+            <button id="saveButton" type="button">Сохранить изменения</button>
+            
+            <!-- Плашка для сообщения о сохранении -->
+            <div id="saveSuccess" class="upload-success" style="display: none;">Изменения сохранены!</div>
+            
+            <div id="uploadedFiles"></div> <!-- Контейнер для загруженных файлов (можно удалить если не нужен) -->
+            
+            
+            
+            <div id="uploadedFiles"></div> 
+            
+            <div class="image-container">
+                <a href="pers-act.html">
+                    <img src="img/Pers-act.svg" alt="Первая" class="responsive-image">
+                </a>
+                <a href="home-def.html">
+                    <img src="img/home-def.svg" alt="Вторая" class="responsive-image">
+                </a>
+                <a href="статистика.html">
+                    <img src="img/statistics-def.svg" alt="Третья" class="responsive-image">
+                </a>
+                <a href="рейтинг.html">
+                    <img src="img/rating-def.svg" alt="Четвертая" class="responsive-image">
+                </a>
+            </div>
+            
+            
+        </form>
+    </body>
+</html>
+<script src="начало.js"></script>
