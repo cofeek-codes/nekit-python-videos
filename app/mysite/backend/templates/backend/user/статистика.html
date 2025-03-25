@@ -1,35 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="статистика.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="main">
-        <div class="header">
-           
-        </div>
+{% extends 'backend/user/layout.html' %}
+{% load static %}
 
-        <div class="content">
-        <form action="">
-            <img src="img/Status Bar - iPhone.svg" alt="Верх" class="header-image">
-            
-            <div class="header-container">
-                <a href="начало.html"> <!-- Укажите ссылку на нужную страницу -->
-                    <img src="img/стрелочка.svg" alt="стрелочка" class="arrow-image">
-                </a>
-                <div class="stimul_zag">Статистика</div>
-            </div>
-            
-            <!-- Горизонтальная линия под заголовком -->
-            <hr class="divider">
-            
+{% block styles %}
+<link rel="stylesheet" href="{% static 'backend/css/user/статистика.css' %}">
+{% endblock styles %}
+
+{% block title %}
+Статистика
+{% endblock title %}
+
+{% block header %}
+Статистика
+{% endblock header %}
+
+
+{% block scripts %}
+{% endblock scripts %}
+
+{% block content %}
             <table id="data-table">
                 <thead>
                     <tr>
@@ -76,21 +64,23 @@
                 <a id="exportToExcel" href="#" class="redact_gr">Выгрузить в Excel</a>
             </div>
 
-            <div class="image-container">
-                <a href="начало.html">
-                    <img src="img/pers-def.svg" alt="Первая" class="responsive-image">
-                </a>
-                <a href="home-def.html">
-                    <img src="img/home-def.svg" alt="Вторая" class="responsive-image">
-                </a>
-                <a href="статистика.html">
-                    <img src="img/statistics-act.svg" alt="Третья" class="responsive-image">
-                </a>
-                <a href="рейтинг.html">
-                    <img src="img/rating-def.svg" alt="Четвертая" class="responsive-image">
-                </a>
-            </div>
-            
-        </form>
-    </body>
-</html>
+{% endblock content %}
+
+{% block footer %}
+
+<div class="image-container">
+  <a href="pers-act.html">
+    <img src="{% static 'backend/img/pers-def.svg' %}" alt="Первая" class="responsive-image">
+  </a>
+  <a href="home-def.html">
+    <img src="{% static 'backend/img/home-def.svg' %}" alt="Вторая" class="responsive-image">
+  </a>
+  <a href="статистика.html">
+    <img src="{% static 'backend/img/statistics-act.svg' %}" alt="Третья" class="responsive-image">
+  </a>
+  <a href="рейтинг.html">
+    <img src="{% static 'backend/img/rating-def.svg' %}" alt="Четвертая" class="responsive-image">
+  </a>
+</div>
+
+{% endblock footer %}

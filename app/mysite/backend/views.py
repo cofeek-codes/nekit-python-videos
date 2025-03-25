@@ -9,6 +9,12 @@ def index(request):
 
     return render(request, 'backend/user/начало.html')
 
+
 def rating(request):
 
     return render(request, 'backend/user/рейтинг.html')
+
+
+def statistics(request):
+
+    return render(request, 'backend/user/статистика.html')
