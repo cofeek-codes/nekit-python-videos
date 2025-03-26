@@ -26,5 +26,9 @@ class Period(models.Model):
     reviews_amount = models.IntegerField('reviews_amount', default=0)
     average = models.FloatField('average')
 
-
+class PDO_Subject(models.Model):
+    title = models.CharField('title', max_length=200)
     
+class PDO_Teacher(models.Model):
+    name = models.CharField('name', max_length=200)
+    subject = models.ForeignKey(PDO_Subject, on_delete=models.CASCADE, related_name='teachers')

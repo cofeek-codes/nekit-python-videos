@@ -6,35 +6,35 @@
 {% endblock styles %}
 
 {% block title %}
-Редактирование ПДО
+Редактирование учителей ПДО
 {% endblock title %}
 
 
 {% block header %}
-Редактирование ПДО
+Редактирование учителей ПДО
 {% endblock header %}
 
 
 {% block scripts %}
 {# <script src="{% static 'backend/js/admin/teacher.js' %}"></script> #}
-  {# <script src="{% static 'backend/js/admin/edit-groups.js' %}"></script> #}
-  <script src="{% static 'backend/js/admin/new_subject.js' %}"></script> 
+{# <script src="{% static 'backend/js/admin/edit-groups.js' %}"></script> #}
+<script src="{% static 'backend/js/admin/new_teacher.js' %}"></script> 
 {% endblock scripts %}
 
 {% block content %}
 
   <div id="criteriaContainer">
-    {% for subject in subjects %}
+    {% for teacher in teachers %}
                 <div class="raschet">
-                    <a href="{% url 'pdo_teacher_edit' subject.id %}" class="redact_gr">{{ subject.title }}</a>
-                    <a href="{% url 'pdo_subject_table_remove' subject.id  %}"><img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image"></a>
+                    <a href="" class="redact_gr">{{ teacher.name }}</a>
+                    <a href="{% url 'pdo_teacher_table_remove' teacher.id  %}"><img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image"></a>
                 </div>
                 {% endfor %}
             </div>
             
             <div class="dobavit">
-                <input type="text" id="newCriteriaInput" placeholder="Введите новую группу">
-                <button data-url="{% url 'pdo_subject_table_add' %}" id="addCriteriaButton" type="button">Добавить</button>
+                <input type="text" id="newCriteriaInput" placeholder="Введите нового учителя">
+                <button data-url="{% url 'pdo_teacher_table_add' subject.id %}" id="addCriteriaButton" type="button">Добавить</button>
             </div>
        
 {% endblock content %}

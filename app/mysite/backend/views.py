@@ -6,7 +6,7 @@ import json
 import time
 
 
-from .models import Criteria, Period, Subject, Teacher
+from .models import Criteria, PDO_Subject, PDO_Teacher, Period, Subject, Teacher
 
 from .forms import TeacherForm
 
@@ -96,6 +96,41 @@ def subject_table_add(request):
     return redirect('subject_edit')
 
 
+def pdo_subject_table_remove(request, id):
+    subject_to_delete = PDO_Subject.objects.get(id=id)
+    if subject_to_delete:
+        subject_to_delete.delete()
+    
+    return redirect('pdo_table')
+
+def pdo_subject_table_add(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        new_subject = PDO_Subject(title=data['title'])
+        new_subject.save()
+        time.sleep(1)
+        
+    return redirect('pdo_table')
+
+def pdo_teacher_table_remove(request, id):
+    teacher_to_delete = PDO_Teacher.objects.get(id=id)
+    pdo_subject_id = teacher_to_delete.subject_id
+    if teacher_to_delete:
+        teacher_to_delete.delete()
+    
+    return redirect('pdo_teacher_edit', pdo_subject_id)
+
+def pdo_teacher_table_add(request, id):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        pdo_new_subject = PDO_Teacher(name=data['name'], subject_id=id)
+        pdo_new_subject.save()
+        time.sleep(1)
+        
+    return redirect('pdo_teacher_edit', id)
+
+
+
 def teacher_edit(request, id):
     data = {
     'teachers': Teacher.objects.filter(subject_id=id),
@@ -103,6 +138,12 @@ def teacher_edit(request, id):
     }
     return render(request, 'backend/admin/teacher-redact.html', data)
 
+def pdo_teacher_edit(request, id):
+    data = {
+    'teachers': PDO_Teacher.objects.filter(subject_id=id),
+    'subject': PDO_Subject.objects.filter(id=id).first()
+    }
+    return render(request, 'backend/admin/pdo-teacher-redact.html', data)
 
 
 def admin_edit(request):
@@ -118,9 +159,11 @@ def statistics_def(request):
     return render(request, 'backend/user/рейтинг.html', data)
 
 
-def dpo_table(request):
-
-    return render(request, 'backend/admin/редактирование-дпо.html')
+def pdo_table(request):
+    data = {
+        'subjects': PDO_Subject.objects.all()
+    }
+    return render(request, 'backend/admin/редактирование-дпо.html', data)
 
 
 def criteria_table(request):
