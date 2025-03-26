@@ -18,6 +18,7 @@
 {% block scripts %}
 {# <script src="{% static 'backend/js/admin/teacher.js' %}"></script> #}
 {# <script src="{% static 'backend/js/admin/edit-groups.js' %}"></script> #}
+<script src="{% static 'backend/js/admin/new_teacher.js' %}"></script> 
 {% endblock scripts %}
 
 {% block content %}
@@ -33,7 +34,7 @@
             
             <div class="dobavit">
                 <input type="text" id="newCriteriaInput" placeholder="Введите нового учителя">
-                <button id="addCriteriaButton" type="button">Добавить</button>
+                <button data-url="{% url 'teacher_table_add' subject.id %}" id="addCriteriaButton" type="button">Добавить</button>
             </div>
        
 {% endblock content %}

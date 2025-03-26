@@ -79,7 +79,8 @@ def subject_edit(request):
 
 def teacher_edit(request, id):
     data = {
-    'teachers': Teacher.objects.filter(subject_id=id)    
+    'teachers': Teacher.objects.filter(subject_id=id),
+    'subject': Subject.objects.filter(id=id).first()
     }
     return render(request, 'backend/admin/teacher-redact.html', data)
 
@@ -128,3 +129,12 @@ def teacher_table_remove(request, id):
         teacher_to_delete.delete()
     
     return redirect('teacher_edit', subject_id)
+
+def teacher_table_add(request, id):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        new_teacher = Teacher(name=data['name'], subject_id=id)
+        new_teacher.save()
+        import time
+        time.sleep(1)
+    return redirect('teacher_edit', id)

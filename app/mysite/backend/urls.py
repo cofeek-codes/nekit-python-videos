@@ -20,6 +20,7 @@ urlpatterns = [
     path('dpo_table', views.dpo_table, name='dpo_table'),
     path('criteria_table', views.criteria_table, name='criteria_table'),
     path('criteria_table_add', views.criteria_table_add, name='criteria_table_add'),
-    path('criteria_table_remove/<int:id>/', views.criteria_table_remove, name='criteria_table_remove'),
-    path('teacher_table_remove/<int:id>/', views.teacher_table_remove, name='teacher_table_remove'),
+    path('criteria_table_remove/<int:id>', views.criteria_table_remove, name='criteria_table_remove'),
+    path('teacher_table_remove/<int:id>', views.teacher_table_remove, name='teacher_table_remove'),
+    path('teacher_table_add/<int:id>', views.teacher_table_add, name='teacher_table_add'),
     ]
