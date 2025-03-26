@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
-from .forms import AForm
+from .forms import TeacherForm
 
 # Create your views here.
 

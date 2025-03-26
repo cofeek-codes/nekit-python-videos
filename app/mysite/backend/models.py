@@ -2,18 +2,11 @@ from django.db import models
 
 # Create your models here.
 
-class A(models.Model):
-    title = models.CharField('title', max_length=50)
-    anons = models.CharField('anons', max_length=50)
-    full_text = models.TextField('full text')
-    date = models.CharField('publish date', max_length=50)
-
-    def __str__(self):
-        return f"News - {self.title}"
+class Teacher(models.Model):
+    name = models.CharField('name', max_length=200)
+    subject = models.CharField('subject', max_length=50)
+    lessons_amount = models.IntegerField('lessons_amount')
+    courses_amount = models.IntegerField('courses_amount')
+    average = models.FloatField('average')
+    total = models.FloatField('total')
     
-    def get_absolute_path(self):
-        return f"/backend/{self.id}"
-
-    class Meta:
-        verbose_name = "New"
-        verbose_name_plural = "News"
