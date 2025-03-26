@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render
 
 import json
 
-from .models import Criteria
+from .models import Criteria, Teacher
 
 from .forms import TeacherForm
 
@@ -42,8 +42,11 @@ def home_def(request):
 
 
 def rating(request):
-
-    return render(request, 'backend/user/рейтинг.html')
+    data = {
+    'teachers': Teacher.objects.all()    
+    }
+    
+    return render(request, 'backend/user/рейтинг.html', data)
 
 
 def statistics(request):

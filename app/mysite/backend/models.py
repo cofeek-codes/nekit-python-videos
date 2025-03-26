@@ -15,5 +15,6 @@ class Teacher(models.Model):
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='teachers')
     lessons_amount = models.IntegerField('lessons_amount')
     courses_amount = models.IntegerField('courses_amount')
+    reviews_amount = models.IntegerField('reviews_amount', default=0)
     average = models.FloatField('average')
     total = models.FloatField('total')
