@@ -16,25 +16,19 @@
 
 
 {% block scripts %}
-  <script src="{% static 'backend/js/admin/edit-groups.js' %}"></script>
-  <script src="{% static 'backend/js/admin/teacher.js' %}"></script>
+  {# <script src="{% static 'backend/js/admin/edit-groups.js' %}"></script>  #}
+  {# <script src="{% static 'backend/js/admin/teacher.js' %}"></script>  #}
 {% endblock scripts %}
 
 {% block content %}
 
   <div class="form-container" id="criteriaContainer">
+    {% for criteria in criterias %}
     <div class="raschet">
-      <a href="#" class="redact_gr" contentEditable="true">Критерий 1</a>
-      <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
+      <a href="#" class="redact_gr" contentEditable="false">{{ criteria.title }}</a>
+      <a href="{% url 'criteria_table_remove' criteria.id  %}"><img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image"></a>
     </div>
-    <div class="raschet">
-      <a href="#" class="redact_gr" contentEditable="true">Критерий 2</a>
-      <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
-    </div>
-    <div class="raschet">
-      <a href="#" class="redact_gr" contentEditable="true">Критерий 3</a>
-      <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
-    </div>
+    {% endfor %}
   </div>
   
   

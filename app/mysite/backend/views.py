@@ -109,5 +109,18 @@ def dpo_table(request):
 
 
 def criteria_table(request):
+    data = {
+    'criterias': Criteria.objects.all()    
+    }
+    return render(request, 'backend/admin/редактировать-критерии.html', data)
 
-    return render(request, 'backend/admin/редактировать-критерии.html')
+def criteria_table_add(request):
+    
+    return redirect('criteria_table')
+
+def criteria_table_remove(request, id):
+    criteria_to_delete = Criteria.objects.get(id=id)
+    if criteria_to_delete:
+        criteria_to_delete.delete()
+    
+    return redirect('criteria_table')
