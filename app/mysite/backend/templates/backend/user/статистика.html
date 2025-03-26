@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block styles %}
-<link rel="stylesheet" href="{% static 'backend/css/user/статистика.css' %}">
+  <link rel="stylesheet" href="{% static 'backend/css/user/статистика.css' %}">
 {% endblock styles %}
 
 {% block title %}
-Статистика
+  Статистика
 {% endblock title %}
 
 {% block header %}
-Статистика
+  Статистика
 {% endblock header %}
 
 
@@ -18,69 +18,64 @@
 {% endblock scripts %}
 
 {% block content %}
-            <table id="data-table">
-                <thead>
-                    <tr>
-                        <th>Критерий</th>
-                        <th>2020/21</th>
-                        <th>2021/22</th>
-                        <th>2022/23</th>
-                        <th>2023/24</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Кол-во проведенных уроков</td>
-                        <td>204</td>
-                        <td>200</td>
-                        <td>210</td>
-                        <td>208</td>
-                    </tr>
-                    <tr>
-                        <td>Средний балл успеваемости</td>
-                        <td>4,5</td>
-                        <td>4,0</td>
-                        <td>4,96</td>
-                        <td>4,8</td>
-                    </tr>
-                    <tr>
-                        <td>Кол-во курсов, пройденных педагогами</td>
-                        <td>5</td>
-                        <td>2</td>
-                        <td>6</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Число положительных отзывов</td>
-                        <td>80</td>
-                        <td>67</td>
-                        <td>95</td>
-                        <td>92</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="raschet">
-                <a id="exportToExcel" href="#" class="redact_gr">Выгрузить в Excel</a>
-            </div>
+  <table id="data-table">
+    <thead>
+      <tr>
+        <th>Критерий</th>
+        {% for period in periods %}
+          <th>{{ period.title }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Кол-во проведенных уроков</td>
+        {% for period in periods %}
+          <td>{{ period.lessons_amount }}</td>
+        {% endfor %}
+      </tr>
+      <tr>
+        <td>Средний балл успеваемости</td>
+        {% for period in periods %}
+          <td>{{ period.average }}</td>
+        {% endfor %}
+      </tr>
+      <tr>
+        <td>Кол-во курсов, пройденных педагогами</td>
+        {% for period in periods %}
+          <td>{{ period.courses_amount }}</td>
+        {% endfor %}
+      </tr>
+      <tr>
+        <td>Число положительных отзывов</td>
+        {% for period in periods %}
+          <td>{{ period.reviews_amount }}</td>
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="raschet">
+    <a id="exportToExcel" href="#" class="redact_gr">Выгрузить в Excel</a>
+  </div>
 
 {% endblock content %}
 
 {% block footer %}
 
-<div class="image-container">
-  <a href="{% url 'index'  %}">
-    <img src="{% static 'backend/img/pers-def.svg' %}" alt="Первая" class="responsive-image">
-  </a>
-  <a href="{% url 'home_def' %}">
-    <img src="{% static 'backend/img/home-def.svg' %}" alt="Вторая" class="responsive-image">
-  </a>
-  <a href="{% url 'statistics'  %}">
-    <img src="{% static 'backend/img/statistics-act.svg' %}" alt="Третья" class="responsive-image">
-  </a>
-  <a href="{% url 'rating'  %}">
-    <img src="{% static 'backend/img/rating-def.svg' %}" alt="Четвертая" class="responsive-image">
-  </a>
-</div>
+  <div class="image-container">
+    <a href="{% url 'index'  %}">
+      <img src="{% static 'backend/img/pers-def.svg' %}" alt="Первая" class="responsive-image">
+    </a>
+    <a href="{% url 'home_def' %}">
+      <img src="{% static 'backend/img/home-def.svg' %}" alt="Вторая" class="responsive-image">
+    </a>
+    <a href="{% url 'statistics'  %}">
+      <img src="{% static 'backend/img/statistics-act.svg' %}" alt="Третья" class="responsive-image">
+    </a>
+    <a href="{% url 'rating'  %}">
+      <img src="{% static 'backend/img/rating-def.svg' %}" alt="Четвертая" class="responsive-image">
+    </a>
+  </div>
 
 {% endblock footer %}

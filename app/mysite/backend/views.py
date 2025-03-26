@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render
 
 import json
 
-from .models import Criteria, Teacher
+from .models import Criteria, Period, Teacher
 
 from .forms import TeacherForm
 
@@ -50,8 +50,11 @@ def rating(request):
 
 
 def statistics(request):
+    data = {
+        'periods': Period.objects.all()
+        }
 
-    return render(request, 'backend/user/статистика.html')
+    return render(request, 'backend/user/статистика.html', data)
 
 
 def admin_main(request):

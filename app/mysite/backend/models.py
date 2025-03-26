@@ -18,3 +18,13 @@ class Teacher(models.Model):
     reviews_amount = models.IntegerField('reviews_amount', default=0)
     average = models.FloatField('average')
     total = models.FloatField('total')
+
+class Period(models.Model):
+    title = models.CharField('title', max_length=200)
+    lessons_amount = models.IntegerField('lessons_amount')
+    courses_amount = models.IntegerField('courses_amount')
+    reviews_amount = models.IntegerField('reviews_amount', default=0)
+    average = models.FloatField('average')
+
+
+    
