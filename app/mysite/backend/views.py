@@ -1,5 +1,6 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
+from django.urls import reverse
 
 import json
 
@@ -115,8 +116,12 @@ def criteria_table(request):
     return render(request, 'backend/admin/редактировать-критерии.html', data)
 
 def criteria_table_add(request):
-    
+    if request.method == "POST":
+        data = json.loads(request.body)
+        new_criteria = Criteria(title=data['title'])
+        new_criteria.save()
     return redirect('criteria_table')
+        
 
 def criteria_table_remove(request, id):
     criteria_to_delete = Criteria.objects.get(id=id)

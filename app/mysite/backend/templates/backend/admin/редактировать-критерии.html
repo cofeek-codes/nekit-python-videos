@@ -18,6 +18,7 @@
 {% block scripts %}
   {# <script src="{% static 'backend/js/admin/edit-groups.js' %}"></script>  #}
   {# <script src="{% static 'backend/js/admin/teacher.js' %}"></script>  #}
+  <script src="{% static 'backend/js/admin/new_criteria.js' %}"></script>  
 {% endblock scripts %}
 
 {% block content %}
@@ -35,7 +36,7 @@
   
   <div class="dobavit">
     <input type="text" id="newCriteriaInput" placeholder="Введите новый критерий">
-      <button id="addCriteriaButton" type="button">Добавить</button>
+      <button data-url="{% url 'criteria_table_add' %}" id="addCriteriaButton" type="button">Добавить</button>
   </div>
   
 
