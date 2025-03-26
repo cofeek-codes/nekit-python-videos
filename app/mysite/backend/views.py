@@ -4,7 +4,7 @@ from django.urls import reverse
 
 import json
 
-from .models import Criteria, Period, Teacher
+from .models import Criteria, Period, Subject, Teacher
 
 from .forms import TeacherForm
 
@@ -62,36 +62,27 @@ def admin_main(request):
 
     return render(request, 'backend/admin/сайт.html')
 
-def eng_teacher_list(request):
-
-    return render(request, 'backend/admin/angl-teacher.html')
-
 def edit_groups(request):
 
     return render(request, 'backend/admin/edit-groups.html')
-
-def pe_teacher_list(request):
-
-    return render(request, 'backend/admin/fizra-teacher.html')
-
-def math_teacher_list(request):
-
-    return render(request, 'backend/admin/matan-teacher.html')
-
-
-def rus_teacher_list(request):
-
-    return render(request, 'backend/admin/russian-teacher.html')
-
 
 def new_period(request):
 
     return render(request, 'backend/admin/new-period.html')
 
 
-def teacher_edit(request):
+def subject_edit(request):
+    data = {
+    'subjects': Subject.objects.all()    
+    }
+    return render(request, 'backend/admin/subject-redact.html', data)
 
-    return render(request, 'backend/admin/teacher-redact.html')
+def teacher_edit(request, id):
+    data = {
+    'teachers': Teacher.objects.filter(subject_id=id)    
+    }
+    return render(request, 'backend/admin/teacher-redact.html', data)
+
 
 
 def admin_edit(request):
@@ -129,3 +120,11 @@ def criteria_table_remove(request, id):
         criteria_to_delete.delete()
     
     return redirect('criteria_table')
+
+def teacher_table_remove(request, id):
+    teacher_to_delete = Teacher.objects.get(id=id)
+    subject_id = teacher_to_delete.subject_id
+    if teacher_to_delete:
+        teacher_to_delete.delete()
+    
+    return redirect('teacher_edit', subject_id)

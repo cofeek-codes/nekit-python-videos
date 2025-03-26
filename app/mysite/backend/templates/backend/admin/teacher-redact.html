@@ -16,29 +16,23 @@
 
 
 {% block scripts %}
-<script src="{% static 'backend/js/admin/teacher.js' %}"></script>
-<script src="{% static 'backend/js/admin/edit-groups.js' %}"></script>
+{# <script src="{% static 'backend/js/admin/teacher.js' %}"></script> #}
+{# <script src="{% static 'backend/js/admin/edit-groups.js' %}"></script> #}
 {% endblock scripts %}
 
 {% block content %}
 
-     <div id="criteriaContainer">
+  <div id="criteriaContainer">
+    {% for teacher in teachers %}
                 <div class="raschet">
-                    <a href="teacher-redact.html" class="redact_gr">Учителя</a>
-                    <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
+                    <a href="" class="redact_gr">{{ teacher.name }}</a>
+                    <a href="{% url 'teacher_table_remove' teacher.id  %}"><img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image"></a>
                 </div>
-                <div class="raschet">
-                    <a href="редактирование-дпо.html" class="redact_gr">Педагоги доп.образования</a>
-                    <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
-                </div>
-                <div class="raschet">
-                    <a href="админы-школы.html" class="redact_gr">Администрация школы</a>
-                    <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
-                </div>
+                {% endfor %}
             </div>
             
             <div class="dobavit">
-                <input type="text" id="newCriteriaInput" placeholder="Введите новый критерий">
+                <input type="text" id="newCriteriaInput" placeholder="Введите нового учителя">
                 <button id="addCriteriaButton" type="button">Добавить</button>
             </div>
        
@@ -56,7 +50,7 @@
   <a href="{% url 'statistics_def' %}">
     <img src="{% static 'backend/img/statistics-def.svg' %}" alt="Третья" class="responsive-image">
   </a>
-  <a href="{% url 'admin_statistics' %}">
+  <a href="{% url 'statistics_def' %}">
     <img src="{% static 'backend/img/rating-def.svg' %}" alt="Четвертая" class="responsive-image">
   </a>
 </div>

@@ -2,38 +2,33 @@
 {% load static %}
 
 {% block styles %}
-<link rel="stylesheet" href="{% static 'backend/css/admin/edit-groups.css' %}">
+<link rel="stylesheet" href="{% static 'backend/css/admin/teacher-redact.css' %}">
 {% endblock styles %}
 
 {% block title %}
-Редактирование групп
+Редактирование учителей
 {% endblock title %}
 
 
 {% block header %}
-Редактирование групп
+Редактирование учителей
 {% endblock header %}
 
 
 {% block scripts %}
+<script src="{% static 'backend/js/admin/teacher.js' %}"></script>
 <script src="{% static 'backend/js/admin/edit-groups.js' %}"></script>
 {% endblock scripts %}
 
 {% block content %}
 
-     <div id="criteriaContainer">
+  <div id="criteriaContainer">
+    {% for subject in subjects %}
                 <div class="raschet">
-                    <a href="{% url 'subject_edit' %}" class="redact_gr">Учителя</a>
-                    {# <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image"> #}
+                    <a href="{% url 'teacher_edit' subject.id %}" class="redact_gr">{{ subject.title }}</a>
+                    <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
                 </div>
-                <div class="raschet">
-                    <a href="{% url 'dpo_table' %}" class="redact_gr">Педагоги доп.образования</a>
-                    {# <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image"> #}
-                </div>
-                <div class="raschet">
-                    <a href="{% url 'admin_edit' %}" class="redact_gr">Администрация школы</a>
-                    {# <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image"> #}
-                </div>
+                {% endfor %}
             </div>
             
             <div class="dobavit">
