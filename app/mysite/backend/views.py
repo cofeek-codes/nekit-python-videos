@@ -111,8 +111,11 @@ def admin_edit(request):
 
 
 def statistics_def(request):
-
-    return render(request, 'backend/admin/общая-таблица.html')
+    data = {
+    'teachers': Teacher.objects.all()    
+    }
+    
+    return render(request, 'backend/user/рейтинг.html', data)
 
 
 def dpo_table(request):

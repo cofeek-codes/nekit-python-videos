@@ -2,59 +2,59 @@
 {% load static %}
 
 {% block styles %}
-  <link rel="stylesheet" href="{% static 'backend/css/admin/редактирование-дпо.css' %}">
+<link rel="stylesheet" href="{% static 'backend/css/admin/редактирование-дпо.css' %}">
 {% endblock styles %}
 
 {% block title %}
-  Редактирование администрации
+Редактирование администрации
 {% endblock title %}
 
 
 {% block header %}
-  Редактирование администрации
+Редактирование администрации
 {% endblock header %}
 
 
 {% block scripts %}
-  <script src="{% static 'backend/js/admin/edit-groups.js' %}"></script>
-  <script src="{% static 'backend/js/admin/teacher.js' %}"></script>
+<script src="{% static 'backend/js/admin/edit-groups.js' %}"></script>
+<script src="{% static 'backend/js/admin/teacher.js' %}"></script>
 {% endblock scripts %}
 
 {% block content %}
-  <div class="form-container">
-    <div class="raschet">
-      <a  class="redact_gr">Директор</a>
-      <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
-    </div>
-    <div class="raschet">
-      <a  class="redact_gr">Завуч начальных классов</a>
-      <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
-    </div>
+<div class="form-container">
+  <div class="raschet">
+    <a class="redact_gr">Директор</a>
+    <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
   </div>
-  
-  
-  <div class="dobavit">
-    <input type="text" id="newCriteriaInput" placeholder="Введите новый критерий">
-      <button id="addCriteriaButton" type="button">Добавить</button>
+  <div class="raschet">
+    <a class="redact_gr">Завуч начальных классов</a>
+    <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
   </div>
+</div>
+
+
+<div class="dobavit">
+  <input type="text" id="newCriteriaInput" placeholder="Введите новый критерий">
+  <button id="addCriteriaButton" type="button">Добавить</button>
+</div>
 
 {% endblock content %}
 
 {% block footer %}
 
-  <div class="image-container">
-    <a href="{% url 'admin_main' %}">
-      <img src="{% static 'backend/img/Pers-act.svg' %}" alt="Первая" class="responsive-image">
-    </a>
-    <a href="{% url 'home_def' %}">
-      <img src="{% static 'backend/img/home-def.svg' %}" alt="Вторая" class="responsive-image">
-    </a>
-    <a href="{% url 'statistics_def' %}">
-      <img src="{% static 'backend/img/statistics-def.svg' %}" alt="Третья" class="responsive-image">
-    </a>
-    <a href="{% url 'admin_statistics' %}">
-      <img src="{% static 'backend/img/rating-def.svg' %}" alt="Четвертая" class="responsive-image">
-    </a>
-  </div>
+<div class="image-container">
+  <a href="{% url 'admin_main' %}">
+    <img src="{% static 'backend/img/Pers-act.svg' %}" alt="Первая" class="responsive-image">
+  </a>
+  <a href="{% url 'home_def' %}">
+    <img src="{% static 'backend/img/home-def.svg' %}" alt="Вторая" class="responsive-image">
+  </a>
+  <a href="{% url 'statistics_def' %}">
+    <img src="{% static 'backend/img/statistics-def.svg' %}" alt="Третья" class="responsive-image">
+  </a>
+  <a href="{% url 'statistics_def' %}">
+    <img src="{% static 'backend/img/rating-def.svg' %}" alt="Четвертая" class="responsive-image">
+  </a>
+</div>
 
 {% endblock footer %}
