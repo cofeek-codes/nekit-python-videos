@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-     // Функция для подсчета общей суммы значений счетчиков
+    // Функция для подсчета общей суммы значений счетчиков
     function updateTotalCount() {
         const counters = document.querySelectorAll('.count');
         let total = 0;
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
             totalCount.style.display = 'block';
             updateTotalCount(); // Важно!
         } else {
-          totalCount.style.display = 'none'; // Added to hide if not visible in localStorage
+            totalCount.style.display = 'none'; // Added to hide if not visible in localStorage
         }
     }
 
@@ -131,5 +131,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 2000);
     });
 
-    loadData();
+    // loadData();
 });

@@ -17,15 +17,16 @@
 
 {% block scripts %}
   <script src="{% static 'backend/js/user/начало.js' %}"></script>
+  <script src="{% static 'backend/js/user/update.js' %}"></script>
 {% endblock scripts %}
 
 {% block content %}
-  
+  {% for criteria in criterias %}
             <div class="raschet">
-                <a class="redact_gr" href="#" contentEditable="true">Критерий 1</a>
+                <a class="redact_gr" href="#" contentEditable="true">{{ criteria.title }}</a>
                 <div class="counter">
                     <button class="decrement" type="button">-</button>
-                    <span class="count">0</span>
+                    <span class="count">{{ criteria.count }}</span>
                     <button class="increment" type="button">+</button>
                 </div>
             </div>
@@ -34,41 +35,15 @@
                 <button class="uploadButton" type="button">Загрузить файл</button>
             </div>
             <div id="uploadSuccess" class="notification" style="display: none;">Файл успешно загружен!</div>
-            
-            <div class="raschet">
-                <a class="redact_gr" href="#" contentEditable="true">Критерий 2</a>
-                <div class="counter">
-                    <button class="decrement" type="button">-</button>
-                    <span class="count">0</span>
-                    <button class="increment" type="button">+</button>
-                </div>
-            </div>
-            <div class="file-upload">
-                <input type="file" class="fileInput" style="display: none;" /> <!-- Уникальный input для файлов -->
-                <button class="uploadButton" type="button">Загрузить файл</button>
-            </div>
-            <div id="uploadSuccess" class="notification" style="display: none;">Файл успешно загружен!</div>
-            
-            <div class="raschet">
-                <a class="redact_gr" href="#" contentEditable="true">Критерий 3</a>
-                <div class="counter">
-                    <button class="decrement" type="button">-</button>
-                    <span class="count">0</span>
-                    <button class="increment" type="button">+</button>
-                </div>
-            </div>
-            <div class="file-upload">
-                <input type="file" class="fileInput" style="display: none;" /> <!-- Уникальный input для файлов -->
-                <button class="uploadButton" type="button">Загрузить файл</button>
-            </div>
-            <div id="uploadSuccess" class="notification" style="display: none;">Файл успешно загружен!</div>
+
+            {% endfor %}
             
             <!-- Новый элемент для отображения суммы -->
             <div id="totalCount" class="upload-success" style="display: none;"></div>
             
             <!-- Кнопка для сохранения изменений -->
-            <button id="saveButton" type="button">Сохранить изменения</button>
-            
+            <button id="saveButton" data-url="{% url 'update_criterias' %}" type="submit">Сохранить изменения</button>
+                          
             <!-- Плашка для сообщения о сохранении -->
             <div id="saveSuccess" class="upload-success" style="display: none;">Изменения сохранены!</div>
             

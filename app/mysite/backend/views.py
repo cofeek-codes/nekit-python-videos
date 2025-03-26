@@ -1,15 +1,41 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
+import json
+
+from .models import Criteria
+
 from .forms import TeacherForm
 
 # Create your views here.
 
 def index(request):
+    data = {
+        'criterias': Criteria.objects.all()
+    }
 
-    return render(request, 'backend/user/начало.html')
+    return render(request, 'backend/user/начало.html', data)
 
+def update_criterias(request):
+     if request.method == 'POST':
 
+        data = json.loads(request.body)
+        
+        # Обновляем все критерии
+        for i, item in enumerate(data['titles']):
+            criteria = Criteria.objects.filter(id=i+1).first()
+            if criteria:
+                criteria.title = item['title']
+                criteria.save()
+
+        for i, count in enumerate(data['counts']):
+            criteria = Criteria.objects.filter(id=i+1).first()
+            if criteria:
+                criteria.count = count['count']
+                criteria.save()
+
+        return redirect('index')
+                
 def home_def(request):
 
     return render(request, 'backend/user/home_def.html')
