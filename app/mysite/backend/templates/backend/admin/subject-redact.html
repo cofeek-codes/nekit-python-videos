@@ -16,8 +16,9 @@
 
 
 {% block scripts %}
-<script src="{% static 'backend/js/admin/teacher.js' %}"></script>
-<script src="{% static 'backend/js/admin/edit-groups.js' %}"></script>
+{# <script src="{% static 'backend/js/admin/teacher.js' %}"></script> #}
+  {# <script src="{% static 'backend/js/admin/edit-groups.js' %}"></script> #}
+  <script src="{% static 'backend/js/admin/new_subject.js' %}"></script> 
 {% endblock scripts %}
 
 {% block content %}
@@ -26,14 +27,14 @@
     {% for subject in subjects %}
                 <div class="raschet">
                     <a href="{% url 'teacher_edit' subject.id %}" class="redact_gr">{{ subject.title }}</a>
-                    <img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image">
+                    <a href="{% url 'subject_table_remove' subject.id  %}"><img src="{% static 'backend/img/delete.svg' %}" alt="Удалить" class="delete-image"></a>
                 </div>
                 {% endfor %}
             </div>
             
             <div class="dobavit">
-                <input type="text" id="newCriteriaInput" placeholder="Введите новый критерий">
-                <button id="addCriteriaButton" type="button">Добавить</button>
+                <input type="text" id="newCriteriaInput" placeholder="Введите новый предмет">
+                <button data-url="{% url 'subject_table_add' %}" id="addCriteriaButton" type="button">Добавить</button>
             </div>
        
 {% endblock content %}

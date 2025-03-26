@@ -3,6 +3,8 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 
 import json
+import time
+
 
 from .models import Criteria, Period, Subject, Teacher
 
@@ -77,6 +79,23 @@ def subject_edit(request):
     }
     return render(request, 'backend/admin/subject-redact.html', data)
 
+def subject_table_remove(request, id):
+    subject_to_delete = Subject.objects.get(id=id)
+    if subject_to_delete:
+        subject_to_delete.delete()
+    
+    return redirect('subject_edit')
+
+def subject_table_add(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        new_subject = Subject(title=data['title'])
+        new_subject.save()
+        time.sleep(1)
+        
+    return redirect('subject_edit')
+
+
 def teacher_edit(request, id):
     data = {
     'teachers': Teacher.objects.filter(subject_id=id),
@@ -135,6 +154,6 @@ def teacher_table_add(request, id):
         data = json.loads(request.body)
         new_teacher = Teacher(name=data['name'], subject_id=id)
         new_teacher.save()
-        import time
         time.sleep(1)
+        
     return redirect('teacher_edit', id)
