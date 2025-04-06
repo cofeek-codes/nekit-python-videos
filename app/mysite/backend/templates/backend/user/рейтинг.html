@@ -18,48 +18,28 @@
 {% endblock scripts %}
 
 {% block content %}
-            <table>
+           <table>
                 <thead>
                     <tr>
-                      <td>ФИО</td>
+                      <td>Средний балл по успеваемости</td>
                       {% for teacher in teachers %}
-                        <td>{{ teacher.name }}</td>
+                        <td>{{ teacher.average }}</td>
                         {% endfor %}
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                      <td>Предмет</td>
+                      <td>Количество курсов, пройденных педагогами</td>
                       {% for teacher in teachers %}
-                        <td>{{ teacher.subject.title }}</td>
+                        <td>{{ teacher.courses_amount }}</td>
                       {% endfor %}
                     </tr>
                     <tr>
-                      <td>Кол-во проведенных уроков</td>
-                      {% for teacher in teachers %}
-                        <td>{{ teacher.lessons_amount }}</td>
-                      {% endfor %}
-                    </tr>
-                    <tr>
-                      <td>Средний балл успеваемости</td>
-                      {% for teacher in teachers %}
-                        <td>{{ teacher.average }}</td>
-                      {% endfor %}
-                    </tr>
-                    <tr>
-                        <td>Количество курсов, пройденных педагогами</td>
-                        {% for teacher in teachers %}
-                          <td>{{ teacher.courses_amount }}</td>
-                      {% endfor %}
-
-                    </tr>
-                    <tr>
-                      <td>Число полученных положительных отзывов и рейтингов</td>
+                      <td>Число полученных положительных отзывов </td>
                       {% for teacher in teachers %}
                         <td>{{ teacher.reviews_amount }}</td>
                       {% endfor %}
                     </tr>
-                    <tr>
                       <td>Итог</td>
                       {% for teacher in teachers %}
                         <td>{{ teacher.total }}</td>
