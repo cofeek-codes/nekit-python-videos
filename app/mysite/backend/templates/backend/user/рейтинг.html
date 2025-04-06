@@ -19,7 +19,13 @@
 
 {% block content %}
            <table>
-                <thead>
+             <thead>
+                   <tr>
+                      <td>ФИО</td>
+                      {% for teacher in teachers %}
+                        <td>{{ teacher.name }}</td>
+                        {% endfor %}
+                    </tr>
                     <tr>
                       <td>Средний балл по успеваемости</td>
                       {% for teacher in teachers %}
